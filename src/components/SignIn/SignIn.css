@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  height: 92vh;
+  width: 100%;
+}
+
+.page-left {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-right {
+  width: 70%;
+  background-color: lightblue;
+}
+
+/* Form */
+
+form {
+  height: 300px;
+  width: 300px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  margin: 20px 0;
+}
+
+.submit-button {
+  margin-top: 50px;
+}
