@@ -1,31 +1,31 @@
 @media screen and (min-width: 1367px) {
-  html {
+  .map-container {
     font-size: 14px;
   }
 }
 
-body {
+.map-container {
   font-size: 0.875rem;
   overflow: hidden;
 }
 
 /* Scrollbar */
 
-::-webkit-scrollbar {
+.map-container ::-webkit-scrollbar {
   width: 1rem;
 }
 
-::-webkit-scrollbar-track {
+.map-container ::-webkit-scrollbar-track {
   background: none;
 }
 
-::-webkit-scrollbar-thumb {
+.map-container ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 1rem;
   border: solid 0.35rem #262626;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.map-container ::-webkit-scrollbar-thumb:hover {
   background: #4c4c4c;
 }
 

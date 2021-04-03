@@ -1,19 +1,28 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  /* padding: 0 5rem; */
-  background-color: #262626;
+  background-color: transparent;
   color: #f3f3f3;
   min-height: 7vh;
-  width: 100%;
+  width: 80%;
+  left: 10%;
   position: fixed;
   top: 0;
   z-index: 10;
 }
 
 .logo {
+  color: #262626;
   font-size: 1.5rem;
+}
+
+.nav-link {
+  padding: 0 1rem;
+  list-style: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #f8f8ff;
 }
 
 .nav-link:hover,
@@ -24,16 +33,11 @@ nav {
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 20%;
-}
-
-.nav-links li {
-  text-decoration: none;
-  list-style: none;
-  letter-spacing: 1px;
-  font-weight: 500;
-  color: #f8f8ff;
+  background-color: #226074;
+  padding: 0.7rem;
+  border-radius: 1rem;
 }
 
 .burger {
@@ -43,35 +47,37 @@ nav {
 .burger .line {
   width: 1.5rem;
   height: 0.2rem;
-  background-color: #f8f8ff;
+  background-color: #262626;
   margin: 0.3rem;
   border-radius: 0.2rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1367px) {
   .nav-links {
-    width: 40%;
+    width: 30%;
   }
 }
 
 @media screen and (max-width: 767px) {
+  nav {
+    min-height: 8vh;
+  }
+
   .nav-links {
     z-index: 5;
     position: absolute;
-    right: 0px;
-    height: 93vh;
-    top: 7vh;
+    right: 0;
+    top: 10vh;
     background-color: #262626;
     display: flex;
     justify-content: start;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    transform: translatex(100%);
+    transform: translatex(125%);
     transition: transform 0.3s ease-in;
   }
   .nav-links li {
-    opacity: 0;
     padding: 3rem 0;
   }
   .burger {

@@ -1,38 +1,30 @@
 import React, { useRef } from "react";
-import "./nav.css";
 import { Link } from "react-router-dom";
+import "./nav.css";
 
 function Nav() {
-  const nav = useRef(null);
+  const navLinks = useRef();
 
   const onBurgerClick = () => {
-    // nav.classList.toggle("nav-active");
-    // navLinks.forEach((link, i) => {
-    //   if (link.style.animation) {
-    //     link.style.animation = "";
-    //   } else {
-    //     link.style.animation = `navLinkFade 0.5s ease forwards ${i / 7 + 0.5}s`;
-    //   }
-    // });
+    navLinks.current.classList.toggle("nav-active");
   };
 
   return (
-    <nav ref={nav}>
-      <div className="logo">
-        <b>TrainSpota</b>
-      </div>
-      <ul className="nav-links">
-        <Link to="/">
+    <nav>
+      <div className="logo">{/* <b>TrainSpota</b> */}</div>
+      <ul ref={navLinks} className="nav-links">
+        <Link style={{ textDecoration: "none" }} to="/">
           <li className="nav-link">Home</li>
         </Link>
-        <Link to="/map">
+        <Link style={{ textDecoration: "none" }} to="/map">
           <li className="nav-link">Map</li>
         </Link>
-        <Link to="/user/sign-in">
+        <Link style={{ textDecoration: "none" }} to="/user/sign-in">
           <li className="nav-link">Sign-In</li>
         </Link>
       </ul>
-      <div className="burger">
+
+      <div onClick={onBurgerClick} className="burger">
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
