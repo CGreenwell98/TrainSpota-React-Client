@@ -18,7 +18,7 @@
 
 /* Form */
 
-form {
+.page form {
   height: 300px;
   width: 300px;
   border-style: solid;
@@ -32,10 +32,10 @@ form {
   align-items: center;
 }
 
-.input {
+.page .input {
   margin: 20px 0;
 }
 
-.submit-button {
+.page .submit-button {
   margin-top: 50px;
 }

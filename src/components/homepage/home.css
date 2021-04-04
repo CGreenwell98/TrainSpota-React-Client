@@ -2,17 +2,18 @@
 
 .landing-container {
   height: 100vh;
+  font-size: 1.15rem;
 }
 
 .landing h1 {
-  font-size: 3rem;
+  font-size: 3em;
   letter-spacing: 0.5rem;
   font-weight: 700;
   margin-bottom: 6rem;
 }
 
 .landing p {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 500;
   margin-bottom: 3rem;
 }
@@ -62,7 +63,7 @@
     width: 60%;
   }
   .btn {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 }
 
@@ -73,7 +74,7 @@
     box-shadow: 0 0;
   }
   .landing h1 {
-    font-size: 2.4rem;
+    font-size: 2.4em;
     letter-spacing: 0.3rem;
   }
   .landing-text {
@@ -86,6 +87,7 @@
 
 .features-container {
   width: 100%;
+  font-size: 1.15rem;
   padding: 6rem 0;
   background-color: #eeeeee;
   position: relative;
@@ -98,7 +100,7 @@
 
 .features-container h2 {
   color: #45859a;
-  font-size: 2.4rem;
+  font-size: 2.4em;
   letter-spacing: 0.4rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -125,7 +127,7 @@
 }
 
 .feature-card .icon {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 1024px) {

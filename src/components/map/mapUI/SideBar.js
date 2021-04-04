@@ -10,14 +10,23 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./sidebar.css";
 
-const MapSideBar = () => {
+const SideBar = ({ searchForm, findLocation, setSearchHidden }) => {
   return (
     <div className="side-bar">
       <Link to="/">
         <FontAwesomeIcon className="icon" icon={faHome} />
       </Link>
-      <FontAwesomeIcon className="icon" data-name="search" icon={faSearch} />
       <FontAwesomeIcon
+        onClick={() => {
+          setSearchHidden(false);
+          searchForm.current.focus();
+        }}
+        className="icon"
+        data-name="search"
+        icon={faSearch}
+      />
+      <FontAwesomeIcon
+        onClick={() => findLocation()}
         className="icon"
         data-name="curLocation"
         icon={faMapMarkerAlt}
@@ -32,4 +41,4 @@ const MapSideBar = () => {
   );
 };
 
-export default MapSideBar;
+export default SideBar;

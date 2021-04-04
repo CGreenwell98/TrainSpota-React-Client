@@ -49,3 +49,11 @@
     padding: 0;
   }
 }
+
+.btn,
+.btn:hover,
+.result-box:hover {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
