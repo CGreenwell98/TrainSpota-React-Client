@@ -37,59 +37,6 @@
   z-index: 5;
 }
 
-/* Search Results //////////////////////////////////////////////////////////////////////////// */
-
-.search-result-container {
-  max-height: 0;
-  padding: 0;
-  flex-direction: column;
-  transition: max-height 0.15s ease-out;
-  overflow: hidden;
-}
-
-.search-result-container-active {
-  max-height: 70%;
-  padding: 1rem 0;
-  flex-direction: column;
-  transition: max-height 0.25s ease-in;
-  overflow: auto;
-}
-
-.search-results {
-  overflow: auto;
-}
-
-.search-results small {
-  color: #e6e6e6;
-}
-
-.search-results b {
-  background-color: #45859a;
-  padding: 0.3rem 0.4rem;
-  border-radius: 0.3rem;
-  margin-right: 0.6rem;
-}
-
-.result-box {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin-top: 0.3rem;
-}
-
-.result-box,
-.train-data-box {
-  width: 12rem;
-  border-radius: 0.5rem;
-  padding: 0 0.7rem;
-  color: white;
-  transition: all 0.3s;
-}
-
-.result-box:hover {
-  background-color: #555;
-}
-
 /* Train times ////////////////////////////////////////////////////////////////////////*/
 
 .train-data-box {

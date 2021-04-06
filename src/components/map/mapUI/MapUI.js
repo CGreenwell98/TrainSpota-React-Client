@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import SideBar from "./SideBar";
 import Search from "./Search";
+import SearchForm from "./SearchForm";
+import SearchResultsContainer from "./SearchResultsContainer";
 
 const MapUI = ({ findLocation }) => {
   const [searchHidden, setSearchHidden] = useState(true);
@@ -13,11 +15,10 @@ const MapUI = ({ findLocation }) => {
         findLocation={findLocation}
         setSearchHidden={setSearchHidden}
       />
-      <Search
-        searchForm={searchForm}
-        searchHidden={searchHidden}
-        setSearchHidden={setSearchHidden}
-      />
+      <Search searchHidden={searchHidden}>
+        <SearchForm setSearchHidden={setSearchHidden} searchForm={searchForm} />
+        <SearchResultsContainer />
+      </Search>
     </div>
   );
 };
