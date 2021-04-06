@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { RailwayDataContext } from "../../../context/RailwayDataContext";
 
 const SearchResult = ({ stationName, stationCode }) => {
+  const { getStationTrainData } = useContext(RailwayDataContext);
+
   return (
-    <div className="result-box">
+    <div
+      onClick={() => getStationTrainData(stationCode)}
+      className="result-box"
+    >
       <b>{stationCode}</b>
       <p>{stationName}</p>
     </div>

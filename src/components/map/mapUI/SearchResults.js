@@ -2,15 +2,17 @@ import React from "react";
 import SearchResult from "./SearchResult";
 
 const SearchResults = ({ searchedStations }) => {
-  const renderedResults = searchedStations.map((station) => {
-    return (
-      <SearchResult
-        key={station.station_code}
-        stationName={station.name}
-        stationCode={station.station_code}
-      />
-    );
-  });
+  const renderedResults = searchedStations.map(
+    ({ name: stationName, station_code }) => {
+      return (
+        <SearchResult
+          key={station_code}
+          stationName={stationName}
+          stationCode={station_code}
+        />
+      );
+    }
+  );
 
   return (
     <div className="search-results">
