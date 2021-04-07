@@ -6,7 +6,12 @@ import "./searchResultsContainer.css";
 
 const SearchResultsContainer = () => {
   const [containerHidden, setContainerHidden] = useState(true);
-  const { searchedStations, stationTrainData } = useContext(RailwayDataContext);
+  const {
+    dataTypeVisible,
+    currentStation,
+    searchedStations,
+    stationTrainData,
+  } = useContext(RailwayDataContext);
 
   useEffect(() => {
     if (searchedStations.length || stationTrainData.length)
@@ -19,13 +24,14 @@ const SearchResultsContainer = () => {
         !containerHidden ? "search-result-container-active" : ""
       }`}
     >
-      <SearchResults searchedStations={searchedStations} />
-      <TrainResults stationTrainData={stationTrainData} />
-      <div className="loading-dots loading-dots-hidden">
-        <div className="bounce1"></div>
-        <div className="bounce2"></div>
-        <div className="bounce3"></div>
-      </div>
+      {dataTypeVisible === "search" ? (
+        <SearchResults searchedStations={searchedStations} />
+      ) : (
+        <TrainResults
+          stationTrainData={stationTrainData}
+          currentStation={currentStation}
+        />
+      )}
     </div>
   );
 };

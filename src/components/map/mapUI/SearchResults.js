@@ -1,5 +1,6 @@
 import React from "react";
 import SearchResult from "./SearchResult";
+import "./searchResults.css";
 
 const SearchResults = ({ searchedStations }) => {
   const renderedResults = searchedStations.map(

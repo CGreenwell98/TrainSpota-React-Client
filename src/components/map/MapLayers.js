@@ -26,7 +26,14 @@ const layerList = {
 const MapLayers = ({ activeLayers }) => {
   const renderedLayers = activeLayers.map((layerName) => {
     const { url, attribution, zIndex } = layerList[layerName];
-    return <TileLayer url={url} attribution={attribution} zIndex={zIndex} />;
+    return (
+      <TileLayer
+        key={layerName}
+        url={url}
+        attribution={attribution}
+        zIndex={zIndex}
+      />
+    );
   });
 
   return <div>{renderedLayers}</div>;

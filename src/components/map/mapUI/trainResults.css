@@ -3,9 +3,22 @@
 .train-data-box {
   background-color: #333333;
   width: 13rem;
+  border-radius: 0.5rem;
   margin-top: 0.5rem;
   color: #f2f2f2;
   padding: 0.6rem 1rem;
+}
+
+h3 b {
+  background-color: #45859a;
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.3rem;
+  margin-right: 0.6rem;
+}
+
+h3 {
+  margin-right: auto;
+  margin-left: 1.2rem;
 }
 
 .train-data-box h3 {

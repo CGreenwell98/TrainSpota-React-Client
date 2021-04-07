@@ -4,10 +4,10 @@ import axios from "axios";
 const useStationTrains = () => {
   const [stationTrainData, setStationTrainData] = useState([]);
 
-  const getStationTrainData = async (stationcode, type = "stopping") => {
+  const getStationTrainData = async (stationCode, type = "stopping") => {
     const response = await axios.get("/map/station-trains", {
       params: {
-        stationcode: stationcode,
+        stationcode: stationCode,
         type: type,
       },
     });

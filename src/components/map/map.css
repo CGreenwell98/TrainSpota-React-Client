@@ -42,18 +42,12 @@
 
 .loading-dots {
   margin: 4rem;
-  /* transition: opacity 0.1s ease-out; */
-  opacity: 1;
-}
-
-.loading-dots-hidden {
-  display: none;
-  opacity: 0;
 }
 
 .loading-dots > div {
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: 0 0.2rem;
   background-color: #f2f2f2;
   border-radius: 50%;
   display: inline-block;
