@@ -7,7 +7,7 @@ const TrainResult = ({ data, passBtnActive }) => {
       <small>{data.operator_name}</small>
       <ul>
         {passBtnActive ? (
-          <li class="pass-box">
+          <li className="pass-box">
             <b>PASS</b> {data.pass_time}
           </li>
         ) : (

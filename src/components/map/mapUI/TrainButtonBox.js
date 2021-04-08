@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TrainButtonBox = ({
   currentStation,
@@ -34,6 +36,7 @@ const TrainButtonBox = ({
       >
         Passing
       </button>
+      <FontAwesomeIcon className="icon" icon={faMapMarkerAlt} />
     </div>
   );
 };
