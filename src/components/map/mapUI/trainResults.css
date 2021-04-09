@@ -107,16 +107,32 @@ h3 {
   color: #45859a;
 }
 
-.train-type-btn:hover {
+.train-type-btn:hover,
+.station-marker-btn:hover,
+.fav-station-btn:hover {
   color: #b3b3b3;
 }
 
-.train-type-btn-active:hover {
+.train-type-btn-active:hover,
+.station-marker-btn-active:hover {
   color: #45849a;
 }
 
 .train-btn-box {
   width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.station-marker-btn,
+.fav-station-btn {
+  margin: 0 0.4rem;
+  color: #999999;
+  transition: color 0.1s ease-out;
+}
+
+.station-marker-btn-active {
+  color: #45859a;
 }
 
 .train-data-box:not(:last-child) {

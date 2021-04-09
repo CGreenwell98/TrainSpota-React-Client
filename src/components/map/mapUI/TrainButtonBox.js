@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
 import { MapContext } from "../../../context/MapContext";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TrainButtonBox = ({
@@ -33,29 +33,37 @@ const TrainButtonBox = ({
 
   return (
     <div className="train-btn-box">
-      <button
-        className={`btn train-type-btn ${
-          !passBtnActive && "train-type-btn-active"
-        }`}
-        onClick={onTrainBtnClick}
-        data-traintype="stopping"
-      >
-        Stopping
-      </button>
-      <button
-        className={`btn train-type-btn ${
-          passBtnActive && "train-type-btn-active"
-        }`}
-        onClick={onTrainBtnClick}
-        data-traintype="pass"
-      >
-        Passing
-      </button>
-      <FontAwesomeIcon
-        className="icon"
-        icon={faMapMarkerAlt}
-        onClick={onMarkerButtonClick}
-      />
+      <div>
+        <button
+          className={`btn train-type-btn ${
+            !passBtnActive && "train-type-btn-active"
+          }`}
+          onClick={onTrainBtnClick}
+          data-traintype="stopping"
+        >
+          Stopping
+        </button>
+        <button
+          className={`btn train-type-btn ${
+            passBtnActive && "train-type-btn-active"
+          }`}
+          onClick={onTrainBtnClick}
+          data-traintype="pass"
+        >
+          Passing
+        </button>
+      </div>
+
+      <div>
+        <FontAwesomeIcon
+          className={`btn station-marker-btn ${
+            markerBtnActive && "station-marker-btn-active"
+          }`}
+          icon={faMapMarkerAlt}
+          onClick={onMarkerButtonClick}
+        />
+        <FontAwesomeIcon className="btn fav-station-btn" icon={faStar} />
+      </div>
     </div>
   );
 };
