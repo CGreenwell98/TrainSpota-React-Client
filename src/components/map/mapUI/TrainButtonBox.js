@@ -18,6 +18,7 @@ const TrainButtonBox = ({
   const [markerBtnActive, setMarkerBtnActive] = useState(
     stationMarkerList.some((station) => station.name === currentStation.name)
   );
+  const [favStationBtnActive, setFavStationBtnActive] = useState(false);
 
   const onTrainBtnClick = (e) => {
     if (e.target.classList.contains("train-type-btn-active")) return;
@@ -61,8 +62,16 @@ const TrainButtonBox = ({
           }`}
           icon={faMapMarkerAlt}
           onClick={onMarkerButtonClick}
+          title="add marker"
         />
-        <FontAwesomeIcon className="btn fav-station-btn" icon={faStar} />
+        <FontAwesomeIcon
+          className={`btn fav-station-btn ${
+            favStationBtnActive && "fav-station-btn-active"
+          }`}
+          icon={faStar}
+          onClick={() => setFavStationBtnActive(!favStationBtnActive)}
+          title="favourite"
+        />
       </div>
     </div>
   );

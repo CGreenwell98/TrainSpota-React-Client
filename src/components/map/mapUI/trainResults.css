@@ -113,8 +113,7 @@ h3 {
   color: #b3b3b3;
 }
 
-.train-type-btn-active:hover,
-.station-marker-btn-active:hover {
+.train-type-btn-active:hover {
   color: #45849a;
 }
 
@@ -131,8 +130,14 @@ h3 {
   transition: color 0.1s ease-out;
 }
 
-.station-marker-btn-active {
+.station-marker-btn-active,
+.station-marker-btn-active:hover {
   color: #45859a;
+}
+
+.fav-station-btn-active,
+.fav-station-btn-active:hover {
+  color: #d4af37;
 }
 
 .train-data-box:not(:last-child) {

@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import { MapContainer } from "react-leaflet";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
+import { MapContext } from "../../../context/MapContext";
 import ChangeView from "./ChangeView";
 import MapLayers from "./MapLayers";
 import AddMarker from "./AddMarker";
@@ -8,6 +9,7 @@ import StationMarkers from "./StationMarkers";
 
 const LeafletMap = ({ location }) => {
   const { currentStation } = useContext(RailwayDataContext);
+  const { stationMarkerList } = useContext(MapContext);
   const [viewCenter, setViewCenter] = useState(location);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ const LeafletMap = ({ location }) => {
   useEffect(() => {
     setViewCenter(currentStation.coords);
   }, [currentStation]);
+
+  const changeView = useMemo(() => <ChangeView center={viewCenter} />, [
+    viewCenter,
+  ]);
 
   return (
     <MapContainer
@@ -30,10 +36,10 @@ const LeafletMap = ({ location }) => {
         [50, 3],
       ]}
     >
-      <ChangeView center={viewCenter} />
+      {changeView}
       <AddMarker position={location} text={"You are here"} />
       <MapLayers activeLayers={["openStreetMap", "openRailwayMap"]} />
-      <StationMarkers />
+      <StationMarkers stationMarkerList={stationMarkerList} />
     </MapContainer>
   );
 };
