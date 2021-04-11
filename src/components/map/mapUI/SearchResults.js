@@ -2,19 +2,35 @@ import React from "react";
 import SearchResult from "./SearchResult";
 import "./searchResults.css";
 
-const SearchResults = ({ searchedStations }) => {
-  const renderedResults = searchedStations.map((stationInfo) => {
+const SearchResults = ({
+  stations,
+  resultType,
+  setSearchHidden,
+  setFavouritesHidden,
+}) => {
+  const renderedResults = stations.map((stationInfo) => {
     return (
-      <SearchResult key={stationInfo.station_code} stationInfo={stationInfo} />
+      <SearchResult
+        key={stationInfo.code}
+        stationInfo={stationInfo}
+        resultType={resultType}
+        setFavouritesHidden={setFavouritesHidden}
+        setSearchHidden={setSearchHidden}
+      />
     );
   });
+
+  const capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
 
   return (
     <div className="search-results">
       {renderedResults.length ? (
-        <small>Search results</small>
+        <small>{capitalize(resultType)}</small>
       ) : (
-        <p>No search results found</p>
+        <p>No {resultType} found</p>
       )}
       {renderedResults}
     </div>

@@ -5,22 +5,37 @@ import {
   faSearch,
   faLocationArrow,
   faMap,
-  faSubway,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./sidebar.css";
 
-const SideBar = ({ searchForm, findLocation, setSearchHidden }) => {
+const SideBar = ({
+  searchForm,
+  findLocation,
+  searchHidden,
+  setSearchHidden,
+  setFavouritesHidden,
+  favouritesHidden,
+}) => {
+  const onSearchBtnClick = () => {
+    if (!favouritesHidden) setFavouritesHidden(true);
+    setSearchHidden(!searchHidden);
+    if (!searchHidden) searchForm.current.focus();
+  };
+
+  const onFavBtnClick = () => {
+    if (!searchHidden) setSearchHidden(true);
+    setFavouritesHidden(!favouritesHidden);
+  };
+
   return (
     <div className="side-bar">
       <Link to="/">
         <FontAwesomeIcon className="icon" icon={faHome} title="home" />
       </Link>
       <FontAwesomeIcon
-        onClick={() => {
-          setSearchHidden(false);
-          searchForm.current.focus();
-        }}
+        onClick={onSearchBtnClick}
         className="icon"
         data-name="search"
         icon={faSearch}
@@ -42,7 +57,9 @@ const SideBar = ({ searchForm, findLocation, setSearchHidden }) => {
       <FontAwesomeIcon
         className="icon"
         data-name="trainRoutes"
-        icon={faSubway}
+        icon={faStar}
+        onClick={onFavBtnClick}
+        title="favourites"
       />
     </div>
   );

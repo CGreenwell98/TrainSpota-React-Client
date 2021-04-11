@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
 import { MapContext } from "../../../context/MapContext";
+import { UserContext } from "../../../context/UserContext";
 import { faMapMarkerAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,6 +12,11 @@ const TrainButtonBox = ({
 }) => {
   const { getStationTrainData } = useContext(RailwayDataContext);
   const {
+    favouriteStations,
+    addFavouriteStation,
+    removeFavouriteStation,
+  } = useContext(UserContext);
+  const {
     stationMarkerList,
     addStationMarker,
     removeStationMarker,
@@ -18,7 +24,9 @@ const TrainButtonBox = ({
   const [markerBtnActive, setMarkerBtnActive] = useState(
     stationMarkerList.some((station) => station.name === currentStation.name)
   );
-  const [favStationBtnActive, setFavStationBtnActive] = useState(false);
+  const [favStationBtnActive, setFavStationBtnActive] = useState(
+    favouriteStations.some((station) => station.name === currentStation.name)
+  );
 
   const onTrainBtnClick = (e) => {
     if (e.target.classList.contains("train-type-btn-active")) return;
@@ -30,6 +38,12 @@ const TrainButtonBox = ({
     if (!markerBtnActive) addStationMarker(currentStation);
     if (markerBtnActive) removeStationMarker(currentStation);
     setMarkerBtnActive(!markerBtnActive);
+  };
+
+  const onFavouriteBtnClick = () => {
+    if (!favStationBtnActive) addFavouriteStation(currentStation);
+    if (favStationBtnActive) removeFavouriteStation(currentStation);
+    setFavStationBtnActive(!favStationBtnActive);
   };
 
   return (
@@ -69,7 +83,7 @@ const TrainButtonBox = ({
             favStationBtnActive && "fav-station-btn-active"
           }`}
           icon={faStar}
-          onClick={() => setFavStationBtnActive(!favStationBtnActive)}
+          onClick={onFavouriteBtnClick}
           title="favourite"
         />
       </div>

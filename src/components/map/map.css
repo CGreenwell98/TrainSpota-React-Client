@@ -37,6 +37,13 @@
   z-index: 5;
 }
 
+.hidden {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 /* /////////////////////////////////////////////////////////////////////// */
 /* Loading Spinner */
 

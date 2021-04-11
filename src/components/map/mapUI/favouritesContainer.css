@@ -1,0 +1,20 @@
+.favourites-container {
+  position: absolute;
+  z-index: 1;
+  top: 5rem;
+  left: 5rem;
+  width: 18rem;
+  padding: 1rem 0;
+  background-color: #262626;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  transition: opacity 0.2s ease-out;
+  opacity: 1;
+  max-height: 70vh;
+  overflow: auto;
+}

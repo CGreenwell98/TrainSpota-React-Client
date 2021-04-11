@@ -25,7 +25,10 @@ const SearchResultsContainer = () => {
       }`}
     >
       {dataTypeVisible === "search" ? (
-        <SearchResults searchedStations={searchedStations} />
+        <SearchResults
+          resultType="search results"
+          stations={searchedStations}
+        />
       ) : (
         <TrainResults
           stationTrainData={stationTrainData}
