@@ -6,6 +6,7 @@ import ChangeView from "./ChangeView";
 import MapLayers from "./MapLayers";
 import AddMarker from "./AddMarker";
 import StationMarkers from "./StationMarkers";
+import MapClick from "./MapClick";
 
 const LeafletMap = ({ location }) => {
   const { currentStation } = useContext(RailwayDataContext);
@@ -20,9 +21,9 @@ const LeafletMap = ({ location }) => {
     setViewCenter(currentStation.coords);
   }, [currentStation]);
 
-  const changeView = useMemo(() => <ChangeView center={viewCenter} />, [
-    viewCenter,
-  ]);
+  const changeView = useMemo(() => {
+    if (!currentStation.distance) return <ChangeView center={viewCenter} />;
+  }, [viewCenter, currentStation]);
 
   return (
     <MapContainer
@@ -40,6 +41,7 @@ const LeafletMap = ({ location }) => {
       <AddMarker position={location} text={"You are here"} />
       <MapLayers activeLayers={["openStreetMap", "openRailwayMap"]} />
       <StationMarkers stationMarkerList={stationMarkerList} />
+      <MapClick />
     </MapContainer>
   );
 };

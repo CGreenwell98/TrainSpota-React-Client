@@ -1,12 +1,14 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, useMemo } from "react";
 import useStationSearch from "../hooks/apis/useStationSearch";
 import useStationTrains from "../hooks/apis/useStationTrains";
+import useStationLocate from "../hooks/apis/useStationLocate";
 
 export const RailwayDataContext = createContext();
 
 export const RailwayDataProvider = (props) => {
   const [searchedStations, stationSearch] = useStationSearch();
   const [stationTrainData, getStationTrainData] = useStationTrains();
+  const [findClosestStation] = useStationLocate();
   const [dataTypeVisible, setDataTypeVisible] = useState("");
   const [currentStation, setCurrentStation] = useState({});
 
@@ -28,6 +30,7 @@ export const RailwayDataProvider = (props) => {
         stationSearch,
         stationTrainData,
         getStationTrainData,
+        findClosestStation,
       }}
     >
       {props.children}

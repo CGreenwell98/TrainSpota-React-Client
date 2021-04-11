@@ -16,6 +16,7 @@ const TrainResults = ({ currentStation, stationTrainData }) => {
     setShowLoadingDots(false);
   }, [stationTrainData]);
 
+  if (!stationTrainData) return null;
   const renderedTrainData = stationTrainData.map((data) => {
     return (
       <TrainResult
