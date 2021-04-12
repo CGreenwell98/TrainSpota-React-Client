@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
 import { MapContext } from "../../../context/MapContext";
 import { UserContext } from "../../../context/UserContext";
@@ -21,12 +21,17 @@ const TrainButtonBox = ({
     addStationMarker,
     removeStationMarker,
   } = useContext(MapContext);
-  const [markerBtnActive, setMarkerBtnActive] = useState(
-    stationMarkerList.some((station) => station.name === currentStation.name)
-  );
-  const [favStationBtnActive, setFavStationBtnActive] = useState(
-    favouriteStations.some((station) => station.name === currentStation.name)
-  );
+  const [markerBtnActive, setMarkerBtnActive] = useState(false);
+  const [favStationBtnActive, setFavStationBtnActive] = useState(false);
+
+  useMemo(() => {
+    setMarkerBtnActive(
+      stationMarkerList.some((station) => station.name === currentStation.name)
+    );
+    setFavStationBtnActive(
+      favouriteStations.some((station) => station.name === currentStation.name)
+    );
+  }, [currentStation, stationMarkerList, favouriteStations]);
 
   const onTrainBtnClick = (e) => {
     if (e.target.classList.contains("train-type-btn-active")) return;
@@ -41,8 +46,9 @@ const TrainButtonBox = ({
   };
 
   const onFavouriteBtnClick = () => {
-    if (!favStationBtnActive) addFavouriteStation(currentStation);
-    if (favStationBtnActive) removeFavouriteStation(currentStation);
+    const { distance, ...favStation } = currentStation;
+    if (!favStationBtnActive) addFavouriteStation(favStation);
+    if (favStationBtnActive) removeFavouriteStation(favStation);
     setFavStationBtnActive(!favStationBtnActive);
   };
 

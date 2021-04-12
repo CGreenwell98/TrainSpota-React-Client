@@ -17,8 +17,8 @@ const SearchResult = ({
     getStationTrainData(code);
     setCurrentStation(stationInfo);
     if (resultType === "favourite stations") {
-      setSearchHidden(false);
       setFavouritesHidden(true);
+      setSearchHidden(false);
     }
   };
 

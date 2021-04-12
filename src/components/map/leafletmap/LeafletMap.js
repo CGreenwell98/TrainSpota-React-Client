@@ -10,7 +10,7 @@ import MapClick from "./MapClick";
 
 const LeafletMap = ({ location }) => {
   const { currentStation } = useContext(RailwayDataContext);
-  const { stationMarkerList } = useContext(MapContext);
+  const { stationMarkerList, mapLayersList } = useContext(MapContext);
   const [viewCenter, setViewCenter] = useState(location);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const LeafletMap = ({ location }) => {
     >
       {changeView}
       <AddMarker position={location} text={"You are here"} />
-      <MapLayers activeLayers={["openStreetMap", "openRailwayMap"]} />
+      <MapLayers activeLayers={mapLayersList} />
       <StationMarkers stationMarkerList={stationMarkerList} />
       <MapClick />
     </MapContainer>

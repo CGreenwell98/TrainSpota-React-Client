@@ -9,8 +9,9 @@ const MapClick = () => {
     setCurrentStation,
   } = useContext(RailwayDataContext);
 
-  const map = useMapEvent("click", async (e) => {
+  useMapEvent("click", async (e) => {
     const closestStation = await findClosestStation(e.latlng);
+    if (!closestStation) return;
     setCurrentStation(closestStation);
     getStationTrainData(closestStation.code);
   });

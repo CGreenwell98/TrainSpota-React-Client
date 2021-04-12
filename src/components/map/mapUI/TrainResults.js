@@ -13,6 +13,11 @@ const TrainResults = ({ currentStation, stationTrainData }) => {
   }, [passBtnActive]);
 
   useEffect(() => {
+    setShowLoadingDots(true);
+    setPassBtnActive(false);
+  }, [currentStation]);
+
+  useEffect(() => {
     setShowLoadingDots(false);
   }, [stationTrainData]);
 

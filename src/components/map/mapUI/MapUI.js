@@ -20,7 +20,7 @@ const MapUI = ({ findLocation }) => {
         favouritesHidden={favouritesHidden}
         setFavouritesHidden={setFavouritesHidden}
       />
-      <Search searchHidden={searchHidden}>
+      <Search searchHidden={searchHidden} setSearchHidden={setSearchHidden}>
         <SearchForm setSearchHidden={setSearchHidden} searchForm={searchForm} />
         <SearchResultsContainer />
       </Search>
