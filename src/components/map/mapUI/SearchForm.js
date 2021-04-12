@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
 
-const SearchForm = ({ setSearchHidden, searchForm }) => {
+const SearchForm = ({ setContainerVisible, searchForm }) => {
   const [text, setText] = useState("");
   const { stationSearch } = useContext(RailwayDataContext);
 
@@ -23,7 +23,7 @@ const SearchForm = ({ setSearchHidden, searchForm }) => {
           placeholder="Search for a station"
         />
       </form>
-      <button onClick={() => setSearchHidden(true)} className="btn close-btn">
+      <button onClick={() => setContainerVisible("")} className="btn close-btn">
         <b>
           <small>CLOSE</small>
         </b>

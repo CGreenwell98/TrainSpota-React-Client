@@ -13,20 +13,17 @@ import "./sidebar.css";
 const SideBar = ({
   searchForm,
   findLocation,
-  searchHidden,
-  setSearchHidden,
-  setFavouritesHidden,
-  favouritesHidden,
+  containerVisible,
+  setContainerVisible,
 }) => {
-  const onSearchBtnClick = () => {
-    if (!favouritesHidden) setFavouritesHidden(true);
-    setSearchHidden(!searchHidden);
-    if (!searchHidden) searchForm.current.focus();
-  };
-
-  const onFavBtnClick = () => {
-    if (!searchHidden) setSearchHidden(true);
-    setFavouritesHidden(!favouritesHidden);
+  const onBtnClick = (btnType) => {
+    console.log(btnType);
+    if (btnType === containerVisible) {
+      setContainerVisible("");
+    } else {
+      setContainerVisible(btnType);
+      if (btnType === "search") searchForm.current.focus();
+    }
   };
 
   return (
@@ -35,30 +32,31 @@ const SideBar = ({
         <FontAwesomeIcon className="icon" icon={faHome} title="home" />
       </Link>
       <FontAwesomeIcon
-        onClick={onSearchBtnClick}
+        onClick={() => onBtnClick("search")}
         className="icon"
-        data-name="search"
+        name="search"
         icon={faSearch}
         title="search"
       />
       <FontAwesomeIcon
         onClick={() => findLocation()}
         className="icon"
-        data-name="curLocation"
+        name="curLocation"
         icon={faLocationArrow}
         title="location"
       />
       <FontAwesomeIcon
+        onClick={() => onBtnClick("mapType")}
         className="icon"
-        data-name="mapType"
+        name="mapType"
         icon={faMap}
         title="map layers"
       />
       <FontAwesomeIcon
+        onClick={() => onBtnClick("favourites")}
         className="icon"
-        data-name="trainRoutes"
+        name="favourites"
         icon={faStar}
-        onClick={onFavBtnClick}
         title="favourites"
       />
     </div>

@@ -1,13 +1,9 @@
 import React, { useContext, useMemo } from "react";
 import SearchResults from "./SearchResults";
 import { UserContext } from "../../../context/UserContext";
-import "./favouritesContainer.css";
+import "./container.css";
 
-const FavouritesContainer = ({
-  favouritesHidden,
-  setSearchHidden,
-  setFavouritesHidden,
-}) => {
+const FavouritesContainer = ({ containerVisible, setContainerVisible }) => {
   const { favouriteStations } = useContext(UserContext);
 
   const favouriteStationResults = useMemo(() => {
@@ -15,14 +11,15 @@ const FavouritesContainer = ({
       <SearchResults
         resultType="favourite stations"
         stations={favouriteStations}
-        setFavouritesHidden={setFavouritesHidden}
-        setSearchHidden={setSearchHidden}
+        setContainerVisible={setContainerVisible}
       />
     );
-  }, [favouriteStations, setSearchHidden, setFavouritesHidden]);
+  }, [favouriteStations, setContainerVisible]);
 
   return (
-    <div className={`favourites-container ${favouritesHidden && "hidden"}`}>
+    <div
+      className={`container ${containerVisible !== "favourites" && "hidden"}`}
+    >
       {favouriteStationResults}
     </div>
   );

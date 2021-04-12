@@ -1,12 +1,7 @@
 import React, { useContext } from "react";
 import { RailwayDataContext } from "../../../context/RailwayDataContext";
 
-const SearchResult = ({
-  stationInfo,
-  resultType,
-  setFavouritesHidden,
-  setSearchHidden,
-}) => {
+const SearchResult = ({ stationInfo, resultType, setContainerVisible }) => {
   const { getStationTrainData, setCurrentStation } = useContext(
     RailwayDataContext
   );
@@ -17,8 +12,7 @@ const SearchResult = ({
     getStationTrainData(code);
     setCurrentStation(stationInfo);
     if (resultType === "favourite stations") {
-      setFavouritesHidden(true);
-      setSearchHidden(false);
+      setContainerVisible("search");
     }
   };
 

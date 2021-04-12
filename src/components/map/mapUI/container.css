@@ -1,4 +1,4 @@
-.favourites-container {
+.container {
   position: absolute;
   z-index: 1;
   top: 5rem;
@@ -17,4 +17,10 @@
   opacity: 1;
   max-height: 70vh;
   overflow: auto;
+}
+
+.container h5 {
+  margin-right: auto;
+  margin-left: 1rem;
+  color: #e6e6e6;
 }

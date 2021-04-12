@@ -2,20 +2,14 @@ import React from "react";
 import SearchResult from "./SearchResult";
 import "./searchResults.css";
 
-const SearchResults = ({
-  stations,
-  resultType,
-  setSearchHidden,
-  setFavouritesHidden,
-}) => {
+const SearchResults = ({ stations, resultType, setContainerVisible }) => {
   const renderedResults = stations.map((stationInfo) => {
     return (
       <SearchResult
         key={stationInfo.code}
         stationInfo={stationInfo}
         resultType={resultType}
-        setFavouritesHidden={setFavouritesHidden}
-        setSearchHidden={setSearchHidden}
+        setContainerVisible={setContainerVisible}
       />
     );
   });

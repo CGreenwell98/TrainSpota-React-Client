@@ -4,10 +4,10 @@ import Search from "./Search";
 import SearchForm from "./SearchForm";
 import SearchResultsContainer from "./SearchResultsContainer";
 import FavouritesContainer from "./FavouritesContainer";
+import MapOptionsContainer from "./MapOptionsContainer";
 
 const MapUI = ({ findLocation }) => {
-  const [searchHidden, setSearchHidden] = useState(true);
-  const [favouritesHidden, setFavouritesHidden] = useState(true);
+  const [containerVisible, setContainerVisible] = useState("");
   const searchForm = useRef();
 
   return (
@@ -15,19 +15,23 @@ const MapUI = ({ findLocation }) => {
       <SideBar
         searchForm={searchForm}
         findLocation={findLocation}
-        searchHidden={searchHidden}
-        setSearchHidden={setSearchHidden}
-        favouritesHidden={favouritesHidden}
-        setFavouritesHidden={setFavouritesHidden}
+        containerVisible={containerVisible}
+        setContainerVisible={setContainerVisible}
       />
-      <Search searchHidden={searchHidden} setSearchHidden={setSearchHidden}>
-        <SearchForm setSearchHidden={setSearchHidden} searchForm={searchForm} />
+      <Search
+        containerVisible={containerVisible}
+        setContainerVisible={setContainerVisible}
+      >
+        <SearchForm
+          setContainerVisible={setContainerVisible}
+          searchForm={searchForm}
+        />
         <SearchResultsContainer />
       </Search>
+      <MapOptionsContainer containerVisible={containerVisible} />;
       <FavouritesContainer
-        favouritesHidden={favouritesHidden}
-        setFavouritesHidden={setFavouritesHidden}
-        setSearchHidden={setSearchHidden}
+        containerVisible={containerVisible}
+        setContainerVisible={setContainerVisible}
       />
     </div>
   );
