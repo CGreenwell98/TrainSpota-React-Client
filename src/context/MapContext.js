@@ -9,10 +9,10 @@ export const MapContextProvider = (props) => {
     addStationMarker,
     removeStationMarker,
   ] = useStationMarkerList();
-  const [mapLayersList, setMapLayersList] = useState([
-    "openStreetMap",
-    "openRailwayMap",
-  ]);
+  const [mapLayersActive, setMapLayersActive] = useState({
+    map: "openStreetMap",
+    railway: "railwayOperator",
+  });
 
   return (
     <MapContext.Provider
@@ -20,8 +20,8 @@ export const MapContextProvider = (props) => {
         stationMarkerList,
         addStationMarker,
         removeStationMarker,
-        mapLayersList,
-        setMapLayersList,
+        mapLayersActive,
+        setMapLayersActive,
       }}
     >
       {props.children}

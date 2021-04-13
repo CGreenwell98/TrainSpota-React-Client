@@ -15,8 +15,14 @@ const layerList = {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
-  openRailwayMap: {
+  railwayOperator: {
     url: "https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
+    zIndex: 2,
+    attribution:
+      'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+  },
+  railwaySpeed: {
+    url: "https://{s}.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png",
     zIndex: 2,
     attribution:
       'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
@@ -24,17 +30,19 @@ const layerList = {
 };
 
 const MapLayers = ({ activeLayers }) => {
-  const renderedLayers = activeLayers.map((layerName) => {
-    const { url, attribution, zIndex } = layerList[layerName];
-    return (
-      <TileLayer
-        key={layerName}
-        url={url}
-        attribution={attribution}
-        zIndex={zIndex}
-      />
-    );
-  });
+  const renderedLayers = [activeLayers.map, activeLayers.railway].map(
+    (layerName) => {
+      const { url, attribution, zIndex } = layerList[layerName];
+      return (
+        <TileLayer
+          key={layerName}
+          url={url}
+          attribution={attribution}
+          zIndex={zIndex}
+        />
+      );
+    }
+  );
 
   return <div>{renderedLayers}</div>;
 };
