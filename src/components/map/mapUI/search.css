@@ -36,8 +36,9 @@
 
 @media screen and (max-width: 767px) {
   .search-container {
-    left: 10%;
-    width: 80%;
+    top: 7rem;
+    left: 50vw;
+    transform: translateX(-50%);
   }
 }
 

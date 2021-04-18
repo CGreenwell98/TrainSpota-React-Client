@@ -8,6 +8,7 @@ import {
   faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import FeatureCard from "./FeatureCard";
+import "./features.css";
 
 const featuresList = [
   {
@@ -38,7 +39,7 @@ const featuresList = [
   {
     icon: faUser,
     description:
-      "Log-in to save your favourite stations or a specific timetable(coming soon)",
+      "Log-in to save your favourite stations or a specific timetable (coming soon)",
   },
 ];
 

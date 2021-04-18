@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import "./landingPage.css";
 
 const LandingPage = () => {
   return (
@@ -19,8 +20,14 @@ const LandingPage = () => {
             </Link>
           </div>
         </div>
-        {/* <img src={train} alt="train" /> */}
-        <div className="landing-image"></div>
+        <div className="landing-image">
+          <a
+            className="attribution"
+            href="https://www.freepik.com/vectors/tree"
+          >
+            Attribution
+          </a>
+        </div>
       </div>
     </section>
   );

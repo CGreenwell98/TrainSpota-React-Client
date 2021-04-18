@@ -34,3 +34,11 @@
 .map-type-box {
   margin: 0.6rem 0;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    top: 7rem;
+    left: 50vw;
+    transform: translateX(-50%);
+  }
+}

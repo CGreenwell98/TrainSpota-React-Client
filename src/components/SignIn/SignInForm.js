@@ -69,7 +69,6 @@ function SignInForm() {
           value={account.password}
           label="Password"
         />
-        <br />
 
         <Button className="submit-button" variant="contained" color="primary">
           {register ? "Register" : "Sign In"}

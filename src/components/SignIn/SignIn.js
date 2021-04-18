@@ -6,11 +6,11 @@ function SignIn() {
   return (
     <div>
       <Nav />
-      <div className="page">
-        <div className="page-left">
+      <div className="login-page">
+        <div className="login-page-left">
           <SignInForm />
         </div>
-        <div className="page-right"></div>
+        <div className="login-page-right"></div>
       </div>
     </div>
   );
