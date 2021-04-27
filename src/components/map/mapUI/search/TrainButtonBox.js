@@ -1,7 +1,7 @@
 import React, { useState, useContext, useMemo } from "react";
-import { RailwayDataContext } from "../../../context/RailwayDataContext";
-import { MapContext } from "../../../context/MapContext";
-import { UserContext } from "../../../context/UserContext";
+import { RailwayDataContext } from "../../../../context/RailwayDataContext";
+import { MapContext } from "../../../../context/MapContext";
+import { UserContext } from "../../../../context/UserContext";
 import { faMapMarkerAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

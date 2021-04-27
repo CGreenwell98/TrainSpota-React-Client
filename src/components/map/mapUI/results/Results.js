@@ -1,6 +1,6 @@
 import React from "react";
-import SearchResult from "./SearchResult";
-import "./searchResults.css";
+import SearchResult from "./Result";
+import "./results.css";
 
 const SearchResults = ({ stations, resultType, setContainerVisible }) => {
   const renderedResults = stations.map((stationInfo) => {

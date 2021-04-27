@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import { RailwayDataContext } from "../../../context/RailwayDataContext";
-import SearchResults from "./SearchResults";
+import { RailwayDataContext } from "../../../../context/RailwayDataContext";
+import SearchResults from "../results/Results";
 import TrainResults from "./TrainResults";
 import "./searchResultsContainer.css";
 

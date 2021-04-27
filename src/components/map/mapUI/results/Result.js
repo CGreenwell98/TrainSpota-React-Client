@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RailwayDataContext } from "../../../context/RailwayDataContext";
+import { RailwayDataContext } from "../../../../context/RailwayDataContext";
 
 const SearchResult = ({ stationInfo, resultType, setContainerVisible }) => {
   const { getStationTrainData, setCurrentStation } = useContext(

@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 import SideBar from "./SideBar";
-import Search from "./Search";
-import SearchForm from "./SearchForm";
-import SearchResultsContainer from "./SearchResultsContainer";
+import Search from "./search/Search";
+import SearchForm from "./search/SearchForm";
+import SearchResultsContainer from "./search/SearchResultsContainer";
 import FavouritesContainer from "./FavouritesContainer";
-import MapOptionsContainer from "./MapOptionsContainer";
+import MapOptionsContainer from "./mapOptionsTab/MapOptionsContainer";
 
 const MapUI = ({ findLocation }) => {
   const [containerVisible, setContainerVisible] = useState("");

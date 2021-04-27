@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { MapContext } from "../../../context/MapContext";
+import { MapContext } from "../../../../context/MapContext";
 import MapOptionBtn from "./MapOptionBtn";
-import "./container.css";
+import "../container.css";
 
 const MapOptionsContainer = ({ containerVisible }) => {
   const { mapLayersActive, setMapLayersActive } = useContext(MapContext);

@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from "react";
-import SearchResults from "./SearchResults";
+import SearchResults from "./results/Results";
 import { UserContext } from "../../../context/UserContext";
 import "./container.css";
 

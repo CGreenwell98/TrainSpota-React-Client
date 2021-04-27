@@ -10,7 +10,7 @@ const MapOptionBtn = ({
   mapLayersActive,
   setMapLayersActive,
 }) => {
-  const active = mapLayersActive[layerType] === mapLayer;
+  const btnActive = mapLayersActive[layerType] === mapLayer;
 
   const onBtnClick = () => {
     setMapLayersActive((prevLayers) => {
@@ -23,11 +23,13 @@ const MapOptionBtn = ({
 
   return (
     <div
-      className={`map-option-btn btn ${active && "map-option-active"}`}
+      className={`map-option-btn btn ${btnActive && "map-option-active"}`}
       onClick={onBtnClick}
     >
       <p>{text}</p>
-      {active && <FontAwesomeIcon className="icon check-icon" icon={faCheck} />}
+      {btnActive && (
+        <FontAwesomeIcon className="icon check-icon" icon={faCheck} />
+      )}
     </div>
   );
 };
