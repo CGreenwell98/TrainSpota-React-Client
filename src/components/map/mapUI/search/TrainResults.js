@@ -26,6 +26,7 @@ const TrainResults = ({ currentStation, stationTrainData }) => {
     return (
       <TrainResult
         key={data.train_uid}
+        trainId={data.train_uid}
         data={data}
         passBtnActive={passBtnActive}
       />

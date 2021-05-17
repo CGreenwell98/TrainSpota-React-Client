@@ -1,6 +1,8 @@
 import React from "react";
 
-const TrainResult = ({ data, passBtnActive }) => {
+const TrainResult = ({ data, passBtnActive, trainId }) => {
+  const onTrainBtnClick = () => {};
+
   return (
     <div className="train-data-box">
       <h5>Platform {data.platform}</h5>
