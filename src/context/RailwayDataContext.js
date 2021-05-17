@@ -10,6 +10,7 @@ export const RailwayDataProvider = (props) => {
   const [searchedStations, stationSearch] = useStationSearch();
   const [stationTrainData, getStationTrainData] = useStationTrains();
   const [findClosestStation] = useStationLocate();
+  const [trainServiceData, getTrainServiceData] = useTrainService();
   const [dataTypeVisible, setDataTypeVisible] = useState("");
   const [currentStation, setCurrentStation] = useState({});
 
@@ -32,6 +33,8 @@ export const RailwayDataProvider = (props) => {
         stationTrainData,
         getStationTrainData,
         findClosestStation,
+        trainServiceData,
+        getTrainServiceData,
       }}
     >
       {props.children}

@@ -1,7 +1,12 @@
 import React from "react";
+import RailwayDataContext from "../../../../context/RailwayDataContext";
 
 const TrainResult = ({ data, passBtnActive, trainId }) => {
-  const onTrainBtnClick = () => {};
+  const { getTrainServiceData } = RailwayDataContext();
+
+  const onTrainBtnClick = () => {
+    getTrainServiceData(trainId);
+  };
 
   return (
     <div className="train-data-box">
